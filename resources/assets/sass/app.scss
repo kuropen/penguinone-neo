@@ -1,0 +1,27 @@
+@charset "utf-8";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+/*
+ * マージントップの定義
+ * Bootstrapのナビゲーションバーを避けるためマージントップが必要
+ */
+$MARGIN_TOP: 64px;
+$AVATAR_SIZE: 80px;
+
+.contentContainer {
+    margin-top: $MARGIN_TOP;
+}
+
+.nameText {
+    display: inline-block;
+    font-size: 150%;
+    line-height: $AVATAR_SIZE;
+    margin-left: 15px;
+    margin-right: auto;
+}
+
+.avatarBox {
+    display: inline-block;
+    width: $AVATAR_SIZE;
+    height: $AVATAR_SIZE;
+}
