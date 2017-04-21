@@ -1,0 +1,15 @@
+version: '2'
+services:
+    redis:
+        restart: always
+        image: redis:alpine
+        ports:
+            - "6379:6379"
+    web:
+        restart: always
+        build: .
+        ports:
+            - "8000:80"
+        links:
+            - redis
+
