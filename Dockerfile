@@ -2,8 +2,8 @@ FROM php:7.1-apache
 RUN apt-get update && apt-get -y install git unzip
 
 RUN DEFAULT_SITE_FILE=/etc/apache2/sites-enabled/000-default.conf && TMP=$(mktemp) && sed 's!/var/www/html!/var/www/html/public!' $DEFAULT_SITE_FILE > $TMP && mv $TMP $DEFAULT_SITE_FILE
-RUN curl -L https://raw.githubusercontent.com/php/php-src/master/php.ini-production | sed 's/expose_php = On/expose_php = Off/' > /usr/local/etc/php/php.ini
 RUN a2enmod rewrite
+RUN apt-get install -y libmemcached-dev zlib1g-dev && pecl install memcached-3.0.3 && docker-php-ext-enable memcached
 
 COPY . /var/www/html
 
