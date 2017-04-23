@@ -31,6 +31,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav pull-right">
             <li {!! $page === 'home' ? 'class="active"' : '' !!}><a href="/">Home</a></li>
+            <li><a href="https://github.com/kuropen/penguinone-neo">Source</a></li>
             <!--
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
