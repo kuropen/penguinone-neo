@@ -13,6 +13,7 @@
             </div>
         </div>
         <ul class="nav nav-pills nav-stacked">
+          <li role="presentation"><a href="https://mstdn.jp/@kuropen"><i class="fa fa-user-circle" aria-hidden="true"></i> Mastodon (mstdn.jp)</a></li>
           <li role="presentation"><a href="https://akabe.co/@kuropen"><i class="fa fa-user-circle" aria-hidden="true"></i> Mastodon (Becospace)</a></li>
           <li role="presentation"><a href="https://twitter.com/kuropen_aizu"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
           <li role="presentation"><a href="https://fb.me/yuda.hirochika"><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
