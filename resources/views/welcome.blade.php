@@ -23,10 +23,11 @@
     </div>
     <div class="col-md-9">
         <h2>My works</h2>
+        <!--
         <h3>Websites</h3>
         <ul>
-            <li><a href="/mastodon/akabe.co">Becospace Mastodon</a></li>
         </ul>
+        -->
         <h3>Qiita Contributions</h3>
         <ul>
         @foreach ($qiitaContent as $content)
