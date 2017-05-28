@@ -12,5 +12,3 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('/mastodon/{instanceName}', 'MastodonController@instanceInfo');
-Route::get('/.well-known/acme-challenge/{id}', 'LetsEncryptChallengeController@challenge');

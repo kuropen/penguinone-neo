@@ -5,17 +5,27 @@ namespace App;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * Qiita API access interface class.
+ */
 class QiitaAPI
 {
+    /**
+     * Redis cache name.
+     */
     const CACHE_NAME = 'qiitaContribs';
     
+    /**
+     * Get the author's contributions.
+     * @return object
+     */
     public function getKPContribs()
     {
         Log::info('Get qiita contributions');
         if (Cache::has(self::CACHE_NAME)) {
             Log::info('Cache used');
             $result = Cache::get(self::CACHE_NAME);
-        }else{
+        } else {
             $url = 'https://qiita.com/api/v2/items?page=1&per_page=10&query=' . urlencode('user:kuropen');
             
             $ch = curl_init();
@@ -29,5 +39,4 @@ class QiitaAPI
         
         return json_decode($result);
     }
-    
 }

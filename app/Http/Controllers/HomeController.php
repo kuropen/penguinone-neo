@@ -8,25 +8,33 @@ use App\Http\Requests;
 use App\QiitaAPI;
 
 /**
- * トップページ用コントローラ
+ * Top Page Controller.
  */
 class HomeController extends Controller
 {
     
     /**
-     * 作者E-Mailアドレス
-     * Gravater表示に必要
+     * Author E-Mail Address.
+     * This is required by Gravater.
      */
     const AUTHOR_EMAIL = 'shinkai.sdpl@gmail.com';
     
     private $qiita;
     
-    public function __construct (QiitaAPI $qiita)
+    /**
+     * Constructor
+     * @param QiitaAPI $qiita Qiita API Insntace.
+     */
+    public function __construct(QiitaAPI $qiita)
     {
         $this->qiita = $qiita;
     }
     
-    public function index ()
+    /**
+     * Index endpoint.
+     * @return mixed
+     */
+    public function index()
     {
         $emailHash = md5(self::AUTHOR_EMAIL);
         $gravaterUrl = 'https://www.gravatar.com/avatar/' . $emailHash;
@@ -39,5 +47,4 @@ class HomeController extends Controller
             'qiitaContent' => $qiitaContent
         ]);
     }
-    
 }

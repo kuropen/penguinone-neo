@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * User model template, however it is not used here.
+ */
 class User extends Authenticatable
 {
     /**
