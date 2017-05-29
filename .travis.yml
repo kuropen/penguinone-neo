@@ -4,4 +4,4 @@ php:
 
 script:
     - composer install --dev
-    - vendor/bin/phpcs --standard=CodingRule/ruleset.xml --severity=ERROR -s app
+    - vendor/bin/phpcs --standard=CodingRule/ruleset.xml -n -s app
