@@ -1,15 +1,15 @@
 version: '2'
 services:
-    memcached:
+    redis:
         restart: always
-        image: memcached:alpine
+        image: redis:alpine
         ports:
-            - "11211:11211"
+            - "6379:6379"
     web:
         restart: always
         build: .
         ports:
             - "8000:80"
         links:
-            - memcached
+            - redis
 
