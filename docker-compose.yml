@@ -1,5 +1,15 @@
 version: '2'
 services:
+    https-portal:
+      image: steveltn/https-portal:1.0.0
+      ports:
+        - '80:80'
+        - '443:443'
+      links:
+        - web
+      restart: always
+      environment:
+        DOMAINS: 'kuropen.org -> http://web'
     redis:
         restart: always
         image: redis:alpine
@@ -8,8 +18,6 @@ services:
     web:
         restart: always
         build: .
-        ports:
-            - "8000:80"
         links:
             - redis
 
